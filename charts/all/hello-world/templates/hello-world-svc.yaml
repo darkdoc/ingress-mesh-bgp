@@ -14,4 +14,4 @@ spec:
     app: hello-world
     deploymentconfig: hello-world
   sessionAffinity: None
-  type: ClusterIP
+  type: LoadBalancer
