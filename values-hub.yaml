@@ -7,7 +7,6 @@ clusterGroup:
     - golang-external-secrets
     - hello-world
     - metallb-system
-    - metallb
   subscriptions:
     acm:
       name: advanced-cluster-management
@@ -20,7 +19,6 @@ clusterGroup:
   argoProjects:
     - hub
     - hello-world
-    - metallb
   sharedValueFiles:
     - '/overrides/values-{{ $.Values.global.clusterPlatform }}.yaml'
     - '/overrides/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml'
@@ -50,8 +48,8 @@ clusterGroup:
       path: charts/all/hello-world
     metallb:
       name: metallb
-      namespace: metallb
-      argoProject: metallb
+      namespace: metallb-system
+      argoProject: hub
       path: charts/all/metallb
   imperative:
     jobs: []
