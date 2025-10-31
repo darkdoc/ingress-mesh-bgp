@@ -7,7 +7,7 @@ spec:
   myASN: 65001
   peerASN: 64512
   peerAddress: 10.0.112.100
-  bfdProfile: testbfdprofile
+  # bfdProfile: testbfdprofile
   nodeSelectors:
     - matchLabels:
         node-role.kubernetes.io/worker: ""
