@@ -8,3 +8,4 @@ spec:
   peerASN: 64521
   peerAddress: 10.0.112.100
   bfdProfile: testbfdprofile
+  ebgpMultiHop: true
