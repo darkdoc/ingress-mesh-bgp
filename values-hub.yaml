@@ -6,7 +6,9 @@ clusterGroup:
     - vault
     - golang-external-secrets
     - hello-world
-    - metallb-system
+    - metallb-system:
+        operatorGroup: true
+        targetNamespaces: []
   subscriptions:
     acm:
       name: advanced-cluster-management
