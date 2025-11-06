@@ -3,3 +3,7 @@ kind: MetalLB
 metadata:
   name: metallb
   namespace: metallb-system
+spec:
+  logLevel: debug
+  nodeSelector:
+    node-role.kubernetes.io/worker: ""
