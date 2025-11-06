@@ -18,6 +18,10 @@ clusterGroup:
       name: metallb-operator
       namespace: metallb-system
       channel: stable
+    rhsi:
+      name: skupper-operator
+      namespace: openshift-operators
+      channel: stable-2
   argoProjects:
     - hub
     - hello-world
