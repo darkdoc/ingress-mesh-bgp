@@ -1,0 +1,18 @@
+---
+apiVersion: skupper.io/v2alpha1
+kind: Link
+metadata:
+  name: link-west-skupper-router
+  namespace: east
+spec:
+  cost: 1
+  endpoints:
+  - group: skupper-router
+    host: skupper-router-inter-router-west.{{ .Values.global.hubClusterDomain }}
+    name: inter-router
+    port: "443"
+  - group: skupper-router
+    host: skupper-router-edge-west.{{ .Values.global.hubClusterDomain }}
+    name: edge
+    port: "443"
+  tlsCredentials: link-west

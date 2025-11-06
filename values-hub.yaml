@@ -6,6 +6,9 @@ clusterGroup:
     - vault
     - golang-external-secrets
     - hello-world
+    - rhsi
+    - east
+    - west
     - metallb-system:
         operatorGroup: true
         targetNamespaces: []
@@ -61,6 +64,11 @@ clusterGroup:
       namespace: metallb-system
       argoProject: hub
       path: charts/all/metallb
+    rhsi:
+      name: rhsi
+      namespace: rhsi
+      argoProject: hub
+      path: charts/all/rhsi
   imperative:
     jobs: []
   managedClusterGroups:
