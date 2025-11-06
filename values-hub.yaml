@@ -22,6 +22,10 @@ clusterGroup:
       name: skupper-operator
       namespace: openshift-operators
       channel: stable-2
+    rhsi-observer:
+      name: skupper-netobs-operator
+      namespace: openshift-operators
+      channel: stable-2
   argoProjects:
     - hub
     - hello-world
