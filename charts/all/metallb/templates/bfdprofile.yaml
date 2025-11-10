@@ -1,8 +1,10 @@
+{{- if .Values.metallb.bfd.enabled }}
 apiVersion: metallb.io/v1beta1
 kind: BFDProfile
 metadata:
   name: testbfdprofile
   namespace: metallb-system
 spec:
-  receiveInterval: 380
-  transmitInterval: 270
+  receiveInterval: "{{ .Values.metallb.bfd.receiveInterval }}"
+  transmitInterval: "{{ .Values.metallb.bfd.receiveInterval }}"
+{{- end }}

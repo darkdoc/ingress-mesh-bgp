@@ -64,6 +64,9 @@ clusterGroup:
       namespace: metallb-system
       argoProject: hub
       path: charts/all/metallb
+      overrides:
+      - name: metallb.peerAddress
+        value: 10.0.117.112
     rhsi:
       name: rhsi
       namespace: rhsi

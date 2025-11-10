@@ -2,3 +2,13 @@
 # global:
 #   hubClusterDomain: hub.example.com
 #   localCluster: local.example.com
+
+metallb:
+  myASN: 65001
+  peerASN: 64512
+  peerAddress: 10.0.0.0
+  ebgpMultiHop: true
+  bfd:
+    enabled: false
+    receiveInterval: 380
+    transmitInterval: 270

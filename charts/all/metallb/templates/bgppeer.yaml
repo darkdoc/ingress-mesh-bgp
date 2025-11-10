@@ -4,11 +4,13 @@ metadata:
   name: sample
   namespace: metallb-system
 spec:
-  myASN: 65001
-  peerASN: 64512
-  peerAddress: 10.0.117.112
-  # bfdProfile: testbfdprofile
+  myASN: "{{ .Values.metallb.myASN }}"
+  peerASN: "{{ .Values.metallb.peerASN }}"
+  peerAddress: "{{ .Values.metallb.peerAddress }}"
+{{- if .Values.metallb.bfd.enabled }}
+  bfdProfile: testbfdprofile
+{{- end }}
   nodeSelectors:
     - matchLabels:
         node-role.kubernetes.io/worker: ""
-  ebgpMultiHop: true
+  ebgpMultiHop: "{{ .Values.metallb.ebgpMultiHop }}"
