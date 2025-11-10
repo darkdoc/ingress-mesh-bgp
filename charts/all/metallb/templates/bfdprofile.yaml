@@ -5,6 +5,6 @@ metadata:
   name: testbfdprofile
   namespace: metallb-system
 spec:
-  receiveInterval: "{{ .Values.metallb.bfd.receiveInterval }}"
-  transmitInterval: "{{ .Values.metallb.bfd.receiveInterval }}"
+  receiveInterval: {{ .Values.metallb.bfd.receiveInterval }}
+  transmitInterval: {{ .Values.metallb.bfd.receiveInterval }}
 {{- end }}
