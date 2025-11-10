@@ -1,0 +1,6 @@
+apiVersion: v2
+description: A Helm chart to configure Red Hat Service Interconnect on the east cluster
+keywords:
+- pattern
+name: rhsi
+version: 0.0.1
