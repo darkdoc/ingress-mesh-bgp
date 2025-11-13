@@ -6,8 +6,6 @@ clusterGroup:
     - vault
     - golang-external-secrets
     - hello-world
-    - rhsi
-    - east
     - west
     - metallb-system:
         operatorGroup: true
@@ -32,6 +30,7 @@ clusterGroup:
   argoProjects:
     - hub
     - hello-world
+    - west
   sharedValueFiles:
     - '/overrides/values-{{ $.Values.global.clusterPlatform }}.yaml'
     - '/overrides/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml'
@@ -64,10 +63,13 @@ clusterGroup:
       namespace: metallb-system
       argoProject: hub
       path: charts/all/metallb
+      overrides:
+      - name: metallb.peerAddress
+        value: 10.0.101.167
     rhsi:
-      name: rhsi
-      namespace: rhsi
-      argoProject: hub
+      name: west
+      namespace: west
+      argoProject: west
       path: charts/all/rhsi
   imperative:
     jobs: []

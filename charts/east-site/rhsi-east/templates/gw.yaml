@@ -17,6 +17,30 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
+  name: frontend-hello-world-route
+  namespace: east
+spec:
+  parentRefs:
+  - name: example-gateway
+    namespace: default
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /frontend
+    filters:
+      - type: URLRewrite
+        urlRewrite:
+          path:
+            type: ReplaceFullPath
+            replaceFullPath: /
+    backendRefs:
+    - name: frontend
+      port: 8080
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
   name: hello-world-route
   namespace: hello-world
 spec:
@@ -37,28 +61,3 @@ spec:
     backendRefs:
     - name: hello-world
       port: 8080
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: frontend-route
-  namespace: west
-spec:
-  parentRefs:
-  - name: example-gateway
-    namespace: default
-  rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /frontend
-    filters:
-      - type: URLRewrite
-        urlRewrite:
-          path:
-            type: ReplaceFullPath
-            replaceFullPath: /
-    backendRefs:
-    - name: skupper-frontend
-      port: 8080
-

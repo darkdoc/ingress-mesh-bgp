@@ -1,0 +1,9 @@
+apiVersion: skupper.io/v2alpha1
+kind: Connector
+metadata:
+  name: frontend
+  namespace: west
+spec:
+  routingKey: frontend
+  port: 8080
+  selector: app=frontend
