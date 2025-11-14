@@ -49,7 +49,7 @@ clusterGroup:
       path: charts/all/metallb
       overrides:
       - name: metallb.peerAddress
-        value: 10.0.10.100
+        value: 10.0.115.32
     rhsi:
       name: east
       namespace: east

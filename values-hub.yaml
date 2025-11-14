@@ -65,7 +65,7 @@ clusterGroup:
       path: charts/all/metallb
       overrides:
       - name: metallb.peerAddress
-        value: 10.0.101.167
+        value: 10.0.111.114
     rhsi:
       name: west
       namespace: west
