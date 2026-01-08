@@ -7,7 +7,7 @@ metallb:
   myASN: 65001
   peerASN: 64001
   peerAddress: 10.0.0.0
-  ebgpMultiHop: true
+  ebgpMultiHop: false
   bfd:
     enabled: true
     receiveInterval: 380
